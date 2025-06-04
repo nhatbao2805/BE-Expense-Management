@@ -1,12 +1,14 @@
-import { User } from 'src/users/entities/user.entity';
+import { User } from '../../users/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { CategoryInvoice } from '../../category-invoce/entities/category-invoice.entity';
 @Entity()
 export class Invoice {
   @PrimaryGeneratedColumn('uuid')
@@ -14,6 +16,11 @@ export class Invoice {
   @ManyToOne(() => User, (user) => user.invoices)
   user: User;
 
+  @OneToMany(
+    () => CategoryInvoice,
+    (categoryInvoice) => categoryInvoice.invoices,
+  )
+  categoryInvoice: CategoryInvoice;
   @Column()
   title: string;
 

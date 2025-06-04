@@ -1,4 +1,4 @@
-import { Invoice } from 'src/invoices/entities/invoice.entity';
+import { Invoice } from '../../invoices/entities/invoice.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity()

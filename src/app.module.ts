@@ -4,9 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.modules';
-import { InvocesModule } from './invoces/invoces.module';
 import { InvoicesModule } from './invoices/invoices.module';
-import { InvoicesModule } from './invoices/invoices.module';
+import { CategoryInvoceModule } from './category-invoce/category-invoce.module';
 
 @Module({
   imports: [
@@ -24,8 +23,8 @@ import { InvoicesModule } from './invoices/invoices.module';
     }),
     UsersModule,
     AuthModule,
-    InvocesModule,
     InvoicesModule,
+    CategoryInvoceModule,
   ],
 })
 export class AppModule {}
