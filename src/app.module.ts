@@ -2,10 +2,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { UsersModule } from './users/users.module';
-import { AuthModule } from './auth/auth.modules';
-import { InvoicesModule } from './invoices/invoices.module';
-import { CategoryInvoceModule } from './category-invoce/category-invoce.module';
+import { UsersModule } from './modules/users/users.module';
+import { AuthModule } from './modules/auth/auth.modules';
+import { InvoicesModule } from './modules/invoices/invoices.module';
+import { CategoryInvoceModule } from './modules/category-invoce/category-invoce.module';
+import { BoardsModule } from './modules/boards/boards.module';
+import { ListsModule } from './modules/lists/lists.module';
+import { TasksModule } from './modules/tasks/tasks.module';
 
 @Module({
   imports: [
@@ -25,6 +28,9 @@ import { CategoryInvoceModule } from './category-invoce/category-invoce.module';
     AuthModule,
     InvoicesModule,
     CategoryInvoceModule,
+    BoardsModule,
+    ListsModule,
+    TasksModule,
   ],
 })
 export class AppModule {}

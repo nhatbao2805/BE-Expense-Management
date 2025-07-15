@@ -1,5 +1,12 @@
+import { Board } from 'src/modules/boards/entities/board.entity';
 import { Invoice } from '../../invoices/entities/invoice.entity';
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  ManyToMany,
+} from 'typeorm';
 
 @Entity()
 export class User {
@@ -20,4 +27,7 @@ export class User {
 
   @OneToMany(() => Invoice, (invoice) => invoice.user)
   invoices: Invoice[];
+
+  @ManyToMany(() => Board, (board) => board.members)
+  shareBoards: Board[];
 }
